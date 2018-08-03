@@ -51,6 +51,10 @@ ENV INITSYSTEM on
 CMD ["bash", "/usr/src/app/start.sh"]
 
 # add wifi connect?
+FROM resin/%%RESIN_MACHINE_NAME%%-debian
+
+ENV INITSYSTEM on
+
 RUN apt-get update \
     && apt-get install -y dnsmasq wireless-tools \
     && apt-get clean \
