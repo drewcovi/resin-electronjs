@@ -47,6 +47,9 @@ COPY ./app ./
 ## uncomment if you want systemd
 ENV INITSYSTEM on
 
+# Start app
+CMD ["bash", "/usr/src/app/start.sh"]
+
 # -- Start of resin-wifi-connect section -- #
 
 FROM resin/%%RESIN_MACHINE_NAME%%-debian
@@ -67,5 +70,3 @@ RUN curl https://api.github.com/repos/resin-io/resin-wifi-connect/releases/lates
 
 # -- End of resin-wifi-connect section -- #
 
-# Start app
-CMD ["bash", "/usr/src/app/start.sh"]
