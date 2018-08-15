@@ -4,7 +4,7 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'resin-electronjs',
     environment,
-    rootURL: '/',
+    rootURL: './',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {

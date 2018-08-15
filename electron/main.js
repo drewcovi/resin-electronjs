@@ -1,7 +1,7 @@
 const electron = require('electron');
 const path = require('path');
 const serve = require('electron-serve');
-const loadURL = serve({directory: `file:///${path.join(__dirname, 'data')}`});
+// const loadURL = serve({directory: `file:///${path.join(__dirname, 'data')}`});
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -133,6 +133,6 @@ app.on('ready', () => {
 
 
   // the big red button, here we go
-  // mainWindow.loadURL(electronConfig.URL_LAUNCHER_URL);
-  loadURL(mainWindow);
+  mainWindow.loadURL(electronConfig.URL_LAUNCHER_URL);
+  // loadURL(mainWindow);
 });
