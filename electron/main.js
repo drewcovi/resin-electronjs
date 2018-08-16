@@ -9,9 +9,7 @@ const protocolServe = require('electron-protocol-serve');
 const filePath = 'data';
 const protocolServeName = protocolServe({cwd: filePath, app, protocol });
 protocol.registerStandardSchemes([protocolServeName], { secure: true });
-// const loadURL = serve({directory: `file:///${path.join(__dirname, 'data')}`});
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
+
 let mainWindow;
 
 // const {
