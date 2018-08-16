@@ -70,10 +70,10 @@ if (electronConfig.ELECTRON_USER_DATA_DIR) {
 // if (process.env.NODE_ENV === 'development') {
   console.log('Running in development mode');
   Object.assign(electronConfig, {
-    URL_LAUNCHER_HEIGHT: 600,
-    URL_LAUNCHER_WIDTH: 800,
+    URL_LAUNCHER_HEIGHT: 800,
+    URL_LAUNCHER_WIDTH: 480,
     URL_LAUNCHER_KIOSK: 0,
-    URL_LAUNCHER_CONSOLE: 1,
+    URL_LAUNCHER_CONSOLE: 0,
     URL_LAUNCHER_FRAME: 1,
   });
 // }
@@ -119,6 +119,7 @@ app.on('ready', () => {
     kiosk: !!(electronConfig.URL_LAUNCHER_KIOSK),
     webPreferences: {
       sandbox: false,
+      devTools: false,
       nodeIntegration: !!(electronConfig.URL_LAUNCHER_NODE),
       zoomFactor: electronConfig.URL_LAUNCHER_ZOOM,
       overlayScrollbars: !!(electronConfig.URL_LAUNCHER_OVERLAY_SCROLLBARS),
