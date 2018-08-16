@@ -1,15 +1,23 @@
 const electron = require('electron');
+// const {protocol} = require('electron');
 const path = require('path');
-const serve = require('electron-serve');
+const WEB_FOLDER = 'data';
+const PROTOCOL = 'file';
+const { app, protocol, BrowserWindow } = require('electron');
+const url = require('url');
+const protocolServe = require('electron-protocol-serve');
+const filePath = 'data';
+const protocolServeName = protocolServe({cwd: filePath, app, protocol });
+protocol.registerStandardSchemes([protocolServeName], { secure: true });
 // const loadURL = serve({directory: `file:///${path.join(__dirname, 'data')}`});
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
-const {
-  app,
-  BrowserWindow,
-} = electron;
+// const {
+//   app,
+//   BrowserWindow,
+// } = electron;
 
 // simple parameters initialization
 const electronConfig = {
@@ -57,7 +65,9 @@ if (electronConfig.ELECTRON_USER_DATA_DIR) {
   electron.app.setPath('userData', electronConfig.ELECTRON_USER_DATA_DIR)
 }
 
-if (process.env.NODE_ENV === 'development') {
+
+
+// if (process.env.NODE_ENV === 'development') {
   console.log('Running in development mode');
   Object.assign(electronConfig, {
     URL_LAUNCHER_HEIGHT: 600,
@@ -66,7 +76,7 @@ if (process.env.NODE_ENV === 'development') {
     URL_LAUNCHER_CONSOLE: 1,
     URL_LAUNCHER_FRAME: 1,
   });
-}
+// }
 
 // Listen for a 'resin-update-lock' to either enable, disable or check
 // the update lock from the renderer process (i.e. the app)
@@ -132,7 +142,28 @@ app.on('ready', () => {
   });
 
 
+  // protocol.interceptFileProtocol(PROTOCOL, (request, callback) => {
+  //   // // Strip protocol
+  //   let url = request.url.substr(PROTOCOL.length + 1);
+
+  //   // Build complete path for node require function
+  //   url = path.join(__dirname, WEB_FOLDER, url);
+
+  //   // Replace backslashes by forward slashes (windows)
+  //   // url = url.replace(/\\/g, '/');
+  //   url = path.normalize(url);
+
+  //   console.log(url);
+  //   callback({path: url});
+  // });
+  // mainWindow.loadURL(url.format({
+  //   pathname: 'index.html',
+  //   protocol: PROTOCOL + ':',
+  //   slashes: true
+  // }));
   // the big red button, here we go
-  mainWindow.loadURL(electronConfig.URL_LAUNCHER_URL);
+  // mainWindow.loadURL(electronConfig.URL_LAUNCHER_URL);
   // loadURL(mainWindow);
+  mainWindow.loadURL('serve://dist');
+  
 });

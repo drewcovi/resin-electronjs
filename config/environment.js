@@ -2,9 +2,9 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'resin-electronjs',
+    modulePrefix: 'thermostat',
     environment,
-    rootURL: './',
+    rootURL: '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -22,7 +22,15 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+  if (environment === 'development') {
+    ENV.rootURL = '/';
+    ENV.routerLocation = 'history'
+  }
 
+  if (environment === 'production') {
+    ENV.rootURL = '/';
+    ENV.routerLocation = 'hash';
+  }
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

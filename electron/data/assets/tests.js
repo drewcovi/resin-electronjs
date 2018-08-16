@@ -1,6 +1,6 @@
 'use strict';
 
-define('resin-electronjs/tests/app.lint-test', [], function () {
+define('thermostat/tests/app.lint-test', [], function () {
   'use strict';
 
   QUnit.module('ESLint | app');
@@ -20,14 +20,14 @@ define('resin-electronjs/tests/app.lint-test', [], function () {
     assert.ok(true, 'router.js should pass ESLint\n\n');
   });
 });
-define('resin-electronjs/tests/test-helper', ['resin-electronjs/app', 'resin-electronjs/config/environment', '@ember/test-helpers', 'ember-qunit'], function (_app, _environment, _testHelpers, _emberQunit) {
+define('thermostat/tests/test-helper', ['thermostat/app', 'thermostat/config/environment', '@ember/test-helpers', 'ember-qunit'], function (_app, _environment, _testHelpers, _emberQunit) {
   'use strict';
 
   (0, _testHelpers.setApplication)(_app.default.create(_environment.default.APP));
 
   (0, _emberQunit.start)();
 });
-define('resin-electronjs/tests/tests.lint-test', [], function () {
+define('thermostat/tests/tests.lint-test', [], function () {
   'use strict';
 
   QUnit.module('ESLint | tests');
@@ -37,8 +37,8 @@ define('resin-electronjs/tests/tests.lint-test', [], function () {
     assert.ok(true, 'test-helper.js should pass ESLint\n\n');
   });
 });
-define('resin-electronjs/config/environment', [], function() {
-  var prefix = 'resin-electronjs';
+define('thermostat/config/environment', [], function() {
+  var prefix = 'thermostat';
 try {
   var metaName = prefix + '/config/environment';
   var rawConfig = document.querySelector('meta[name="' + metaName + '"]').getAttribute('content');
@@ -56,6 +56,6 @@ catch(err) {
 
 });
 
-require('resin-electronjs/tests/test-helper');
+require('thermostat/tests/test-helper');
 EmberENV.TESTS_FILE_LOADED = true;
 //# sourceMappingURL=tests.map

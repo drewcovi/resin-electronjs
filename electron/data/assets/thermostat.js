@@ -2,7 +2,7 @@
 
 
 
-define('resin-electronjs/app', ['exports', 'resin-electronjs/resolver', 'ember-load-initializers', 'resin-electronjs/config/environment'], function (exports, _resolver, _emberLoadInitializers, _environment) {
+define('thermostat/app', ['exports', 'thermostat/resolver', 'ember-load-initializers', 'thermostat/config/environment'], function (exports, _resolver, _emberLoadInitializers, _environment) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -20,7 +20,7 @@ define('resin-electronjs/app', ['exports', 'resin-electronjs/resolver', 'ember-l
 
   exports.default = App;
 });
-define('resin-electronjs/components/welcome-page', ['exports', 'ember-welcome-page/components/welcome-page'], function (exports, _welcomePage) {
+define('thermostat/components/welcome-page', ['exports', 'ember-welcome-page/components/welcome-page'], function (exports, _welcomePage) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -33,7 +33,7 @@ define('resin-electronjs/components/welcome-page', ['exports', 'ember-welcome-pa
     }
   });
 });
-define('resin-electronjs/helpers/app-version', ['exports', 'resin-electronjs/config/environment', 'ember-cli-app-version/utils/regexp'], function (exports, _environment, _regexp) {
+define('thermostat/helpers/app-version', ['exports', 'thermostat/config/environment', 'ember-cli-app-version/utils/regexp'], function (exports, _environment, _regexp) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -69,7 +69,7 @@ define('resin-electronjs/helpers/app-version', ['exports', 'resin-electronjs/con
 
   exports.default = Ember.Helper.helper(appVersion);
 });
-define('resin-electronjs/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _pluralize) {
+define('thermostat/helpers/pluralize', ['exports', 'ember-inflector/lib/helpers/pluralize'], function (exports, _pluralize) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -77,7 +77,7 @@ define('resin-electronjs/helpers/pluralize', ['exports', 'ember-inflector/lib/he
   });
   exports.default = _pluralize.default;
 });
-define('resin-electronjs/helpers/singularize', ['exports', 'ember-inflector/lib/helpers/singularize'], function (exports, _singularize) {
+define('thermostat/helpers/singularize', ['exports', 'ember-inflector/lib/helpers/singularize'], function (exports, _singularize) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -85,7 +85,7 @@ define('resin-electronjs/helpers/singularize', ['exports', 'ember-inflector/lib/
   });
   exports.default = _singularize.default;
 });
-define('resin-electronjs/initializers/app-version', ['exports', 'ember-cli-app-version/initializer-factory', 'resin-electronjs/config/environment'], function (exports, _initializerFactory, _environment) {
+define('thermostat/initializers/app-version', ['exports', 'ember-cli-app-version/initializer-factory', 'thermostat/config/environment'], function (exports, _initializerFactory, _environment) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -104,7 +104,7 @@ define('resin-electronjs/initializers/app-version', ['exports', 'ember-cli-app-v
     initialize: (0, _initializerFactory.default)(name, version)
   };
 });
-define('resin-electronjs/initializers/container-debug-adapter', ['exports', 'ember-resolver/resolvers/classic/container-debug-adapter'], function (exports, _containerDebugAdapter) {
+define('thermostat/initializers/container-debug-adapter', ['exports', 'ember-resolver/resolvers/classic/container-debug-adapter'], function (exports, _containerDebugAdapter) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -121,7 +121,7 @@ define('resin-electronjs/initializers/container-debug-adapter', ['exports', 'emb
     }
   };
 });
-define('resin-electronjs/initializers/ember-data', ['exports', 'ember-data/setup-container', 'ember-data'], function (exports, _setupContainer) {
+define('thermostat/initializers/ember-data', ['exports', 'ember-data/setup-container', 'ember-data'], function (exports, _setupContainer) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -132,7 +132,7 @@ define('resin-electronjs/initializers/ember-data', ['exports', 'ember-data/setup
     initialize: _setupContainer.default
   };
 });
-define('resin-electronjs/initializers/export-application-global', ['exports', 'resin-electronjs/config/environment'], function (exports, _environment) {
+define('thermostat/initializers/export-application-global', ['exports', 'thermostat/config/environment'], function (exports, _environment) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -182,7 +182,7 @@ define('resin-electronjs/initializers/export-application-global', ['exports', 'r
     initialize: initialize
   };
 });
-define("resin-electronjs/instance-initializers/ember-data", ["exports", "ember-data/initialize-store-service"], function (exports, _initializeStoreService) {
+define("thermostat/instance-initializers/ember-data", ["exports", "ember-data/initialize-store-service"], function (exports, _initializeStoreService) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -193,7 +193,7 @@ define("resin-electronjs/instance-initializers/ember-data", ["exports", "ember-d
     initialize: _initializeStoreService.default
   };
 });
-define('resin-electronjs/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
+define('thermostat/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -201,7 +201,7 @@ define('resin-electronjs/resolver', ['exports', 'ember-resolver'], function (exp
   });
   exports.default = _emberResolver.default;
 });
-define('resin-electronjs/router', ['exports', 'resin-electronjs/config/environment'], function (exports, _environment) {
+define('thermostat/router', ['exports', 'thermostat/config/environment'], function (exports, _environment) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -218,7 +218,7 @@ define('resin-electronjs/router', ['exports', 'resin-electronjs/config/environme
 
   exports.default = Router;
 });
-define('resin-electronjs/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _ajax) {
+define('thermostat/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _ajax) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -231,18 +231,18 @@ define('resin-electronjs/services/ajax', ['exports', 'ember-ajax/services/ajax']
     }
   });
 });
-define("resin-electronjs/templates/application", ["exports"], function (exports) {
+define("thermostat/templates/application", ["exports"], function (exports) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "Pxw04vXa", "block": "{\"symbols\":[],\"statements\":[[1,[20,\"welcome-page\"],false],[0,\"\\n\"],[1,[20,\"outlet\"],false]],\"hasEval\":false}", "meta": { "moduleName": "resin-electronjs/templates/application.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "lIqxCPHQ", "block": "{\"symbols\":[],\"statements\":[[1,[20,\"welcome-page\"],false],[0,\"\\n\"],[1,[20,\"outlet\"],false]],\"hasEval\":false}", "meta": { "moduleName": "thermostat/templates/application.hbs" } });
 });
 
 
-define('resin-electronjs/config/environment', [], function() {
-  var prefix = 'resin-electronjs';
+define('thermostat/config/environment', [], function() {
+  var prefix = 'thermostat';
 try {
   var metaName = prefix + '/config/environment';
   var rawConfig = document.querySelector('meta[name="' + metaName + '"]').getAttribute('content');
@@ -261,6 +261,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("resin-electronjs/app")["default"].create({"name":"resin-electronjs","version":"0.0.0+b7d81206"});
+  require("thermostat/app")["default"].create({"name":"thermostat","version":"0.0.0+9ca97643"});
 }
-//# sourceMappingURL=resin-electronjs.map
+//# sourceMappingURL=thermostat.map
