@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   libssh-4 \
   fbset \
   python-dev \
+  python-pip \
   libexpat-dev && rm -rf /var/lib/apt/lists/*
 
 RUN pip install evdev
