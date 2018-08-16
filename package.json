@@ -52,10 +52,5 @@
   },
   "config": {
     "forge": "./ember-electron/electron-forge-config.js"
-  },
-  "dependencies": {
-    "electron": "^2.0.7",
-    "electron-rebuild": "^1.7.2",
-    "lockfile": "^1.0.4"
   }
 }
