@@ -115,6 +115,7 @@ app.on('ready', () => {
     frame: !!(electronConfig.URL_LAUNCHER_FRAME),
     title: electronConfig.URL_LAUNCHER_TITLE,
     kiosk: !!(electronConfig.URL_LAUNCHER_KIOSK),
+    toolbar: false,
     webPreferences: {
       sandbox: false,
       nodeIntegration: !!(electronConfig.URL_LAUNCHER_NODE),
@@ -128,7 +129,7 @@ app.on('ready', () => {
       mainWindow.show();
     }, 300);
   });
-
+  mainWindow.setMenu(null);
   // if the env-var is set to true,
   // a portion of the screen will be dedicated to the chrome-dev-tools
   if (electronConfig.URL_LAUNCHER_CONSOLE) {
