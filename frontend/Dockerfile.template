@@ -1,12 +1,15 @@
 FROM resin/%%RESIN_MACHINE_NAME%%-node:8
 
+# Move to app dir
+WORKDIR /usr/src/app
+
+# Move package.json to filesystem
+COPY ./package.json ./
+
 RUN JOBS=MAX npm install --unsafe-perm \
   && npm cache clean --force \
   && rm -rf /tmp/* \
   && ember build --environment=production
-
-# Move to app dir
-WORKDIR /usr/src/app
 
 # Move app to filesystem
 COPY ./dist ./frontend
