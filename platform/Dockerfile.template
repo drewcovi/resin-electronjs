@@ -14,9 +14,12 @@ WORKDIR /usr/bin
 
 COPY ./hyperpixel-init .
 COPY ./hyperpixel-touch .
+
+WORKDIR /usr/src/app
+
 COPY ./start.sh .
 
-CMD ["bash", "start.sh"]
+CMD ["bash", "/usr/src/app/start.sh"]
 
 
 
