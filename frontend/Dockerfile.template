@@ -2,7 +2,7 @@ FROM resin/%%RESIN_MACHINE_NAME%%-node:8
 
 RUN JOBS=MAX npm install --unsafe-perm --production \
   && npm cache clean --force \
-  && rm -rf /tmp/* && node_modules/.bin/electron-rebuild \
+  && rm -rf /tmp/* \
   && ember build --environment=production
 
 # Move to app dir
