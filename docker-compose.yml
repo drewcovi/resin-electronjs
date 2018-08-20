@@ -1,12 +1,12 @@
 version: '2'
 volumes:
-  firmware:
+  resin-data:
 services:
   platform:
     build: ./platform
     privileged: true
     volumes:
-      - firmware/frontend:/usr/src/app
+      - resin-data/firmware/frontend:/usr/src/app
     depends_on:
       - frontend
       - services
@@ -14,10 +14,10 @@ services:
     build: ./services
     privileged: true
     volumes:
-      - firmware/app:/usr/src/app
+      - resin-data/firmware/app:/usr/src/app
   frontend:
     build: ./frontend
     privileged: true
     volumes:
-      - firmware/app:/usr/src/app
+      - resin-data/firmware/app:/usr/src/app
 
