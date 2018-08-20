@@ -11,7 +11,7 @@ services:
     build: ./services
     volumes:
       - ./firmware/app:/usr/src/app
-  data:
+  frontend:
     build: ./frontend
     volumes:
       - ./firmware/app:/usr/src/app
