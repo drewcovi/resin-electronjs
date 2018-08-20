@@ -5,17 +5,14 @@ services:
 
   platform:
     build: ./platform
-    privileged: true
     depends_on:
       - services
 
   services:
     build: ./services
-    privileged: true
 
   frontend:
     build: ./frontend
-    privileged: true
     depends_on:
       - platform
     volumes:
