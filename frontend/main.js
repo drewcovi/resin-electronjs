@@ -2,7 +2,6 @@ const electron = require('electron');
 // const {protocol} = require('electron');
 const path = require('path');
 const { app, protocol, BrowserWindow } = require('electron');
-const url = require('url');
 const protocolServe = require('electron-protocol-serve');
 const filePath = 'frontend';
 const protocolServeName = protocolServe({cwd: filePath, app, protocol });
