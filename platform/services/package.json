@@ -1,0 +1,22 @@
+{
+  "name": "swiss-army",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bleno": "^0.4.2",
+    "hsl-to-hex": "^1.0.0",
+    "node-wifi": "^2.0.4",
+    "rpi-gpio": "^0.9.1",
+    "rpi-version": "git+https://github.com/ivsgroup/rpi-version.git",
+    "rpi-ws281x-native": "git+https://github.com/beyondscreen/node-rpi-ws281x-native.git#b3661f776b9875862b9e8acf33fb85418905bea5",
+    "tingodb": "^0.6.1",
+    "tinydb": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

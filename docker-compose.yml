@@ -1,0 +1,17 @@
+version: '2'
+services:
+  platform:
+    build: ./platform
+    volumes:
+      - ./firmware/frontend:/usr/src/app
+    depends_on:
+      - frontend
+      - services
+  services:
+    build: ./services
+    volumes:
+      - ./firmware/app:/usr/src/app
+  data:
+    build: ./frontend
+    volumes:
+      - ./firmware/app:/usr/src/app
