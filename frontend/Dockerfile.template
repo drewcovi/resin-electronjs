@@ -9,7 +9,7 @@ COPY ./package.json ./
 RUN JOBS=MAX npm install --unsafe-perm \
   && npm cache clean --force \
   && rm -rf /tmp/* \
-  && ember build --environment=production
+  && node_modules/.bin/ember build --environment=production
 
 # Move app to filesystem
 COPY ./dist ./frontend

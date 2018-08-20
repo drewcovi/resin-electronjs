@@ -1333,6 +1333,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("thermostat/app")["default"].create({"name":"thermostat","version":"0.0.0+33a751db"});
+  require("thermostat/app")["default"].create({"name":"thermostat","version":"0.0.0+d16a1d7d"});
 }
 //# sourceMappingURL=thermostat.map
