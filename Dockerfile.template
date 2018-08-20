@@ -27,9 +27,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   fbset \
   python-dev \
   python-pip \
+  python-smbus \
   libexpat-dev && rm -rf /var/lib/apt/lists/*
 
-RUN pip install evdev
+RUN pip install evdev \
+  && pip install RPi.GPIO
 
 WORKDIR /usr/bin
 
