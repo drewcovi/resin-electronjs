@@ -3,15 +3,18 @@ services:
   platform:
     build: ./platform
     volumes:
-      - 'resin-data/frontend:/usr/src/app'
+      - 'firmware/frontend:/usr/src/app'
     depends_on:
       - frontend
       - services
   services:
     build: ./services
     volumes:
-      - 'resin-data/app:/usr/src/app'
+      - 'firmware/app:/usr/src/app'
   frontend:
     build: ./frontend
     volumes:
-      - 'resin-data/app:/usr/src/app'
+      - 'firmware/app:/usr/src/app'
+
+volumes:
+  firmware:
