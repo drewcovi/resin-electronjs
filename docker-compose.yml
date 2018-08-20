@@ -8,7 +8,6 @@ services:
     volumes:
       - 'firmware:/usr/src/app'
     depends_on:
-      - frontend
       - services
   services:
     build: ./services
@@ -16,6 +15,8 @@ services:
   frontend:
     build: ./frontend
     privileged: true
+    depends_on:
+      - platform
     volumes:
       - 'firmware:/usr/src/app'
 
