@@ -11,7 +11,7 @@ COPY ./package.json ./
 #  && node_modules/.bin/ember build --environment=production
 
 # Move app to filesystem
-COPY ./dist ./frontend
+COPY ./data ./frontend
 
 # Install other apt deps
 RUN apt-get update && apt-get install -y --no-install-recommends \
