@@ -5,17 +5,18 @@
   "description": "Small description for resin-electronjs goes here",
   "license": "MIT",
   "author": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "NODE_ENV=development electron .",
+    "lint": "eslint .",
+    "start": "NODE_ENV=production startx ./node_modules/electron/dist/electron .",
+    "local": "NODE_ENV=production electron ."
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "repository": "",
-  "scripts": {
-    "build": "ember build",
-    "lint:js": "eslint ./*.js app config lib server tests",
-    "start": "ember serve",
-    "test": "ember test"
-  },
   "dependencies": {
     "electron": "^2.0.7",
     "electron-protocol-serve": "^1.3.0",
