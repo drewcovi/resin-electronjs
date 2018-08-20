@@ -6,9 +6,8 @@ WORKDIR /usr/src/app
 # Move package.json to filesystem
 COPY ./package.json ./
 
-RUN JOBS=MAX npm install --unsafe-perm \
+RUN JOBS=MAX npm install \
   && npm cache clean --force \
-  && rm -rf /tmp/* \
   && node_modules/.bin/ember build --environment=production
 
 # Move app to filesystem
