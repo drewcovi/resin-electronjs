@@ -2,16 +2,17 @@ version: '2'
 volumes:
   firmware:
 services:
+
   platform:
     build: ./platform
     privileged: true
-    volumes:
-      - 'firmware:/usr/src/app'
     depends_on:
       - services
+
   services:
     build: ./services
     privileged: true
+
   frontend:
     build: ./frontend
     privileged: true
