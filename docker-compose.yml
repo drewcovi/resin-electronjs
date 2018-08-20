@@ -6,7 +6,7 @@ services:
     build: ./platform
     privileged: true
     volumes:
-      - _data/firmware/frontend:/usr/src/app
+      -  /mnt/data/docker/volumes/_resin-data/_data/firmware/frontend:/usr/src/app
     depends_on:
       - frontend
       - services
@@ -14,10 +14,10 @@ services:
     build: ./services
     privileged: true
     volumes:
-      - _data/firmware/app:/usr/src/app
+      -  /mnt/data/docker/volumes/_resin-data/_data/firmware/app:/usr/src/app
   frontend:
     build: ./frontend
     privileged: true
     volumes:
-      - _data/firmware/app:/usr/src/app
+      -  /mnt/data/docker/volumes/_resin-data/_data/firmware/app:/usr/src/app
 
