@@ -13,8 +13,6 @@ services:
   services:
     build: ./services
     privileged: true
-    volumes:
-      - 'firmware:/usr/src/app'
   frontend:
     build: ./frontend
     privileged: true

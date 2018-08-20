@@ -56,7 +56,7 @@ RUN JOBS=MAX npm install --unsafe-perm --production && npm cache clean --force &
 
 # Start app
 
-CMD ["bash", "/usr/src/app/start.sh"]
+CMD ["bash", "start.sh"]
 
 
 
