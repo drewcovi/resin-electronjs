@@ -12,8 +12,9 @@ RUN pip install evdev \
 
 WORKDIR /usr/bin
 
-COPY ./hyperpixel-init ./
-COPY ./hyperpixel-touch ./
+COPY ./hyperpixel-init .
+COPY ./hyperpixel-touch .
+COPY ./start.sh .
 
 CMD ["bash", "start.sh"]
 
