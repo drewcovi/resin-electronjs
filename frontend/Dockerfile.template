@@ -6,9 +6,9 @@ WORKDIR /usr/src/app
 # Move package.json to filesystem
 COPY ./package.json ./
 
-RUN JOBS=MAX npm install \
-  && npm cache clean --force \
-  && node_modules/.bin/ember build --environment=production
+#RUN JOBS=MAX npm install \
+#  && npm cache clean --force \
+#  && node_modules/.bin/ember build --environment=production
 
 # Move app to filesystem
 COPY ./dist ./frontend
