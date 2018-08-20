@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 /usr/bin/hyperpixel-init
 /usr/bin/hyperpixel-touch
