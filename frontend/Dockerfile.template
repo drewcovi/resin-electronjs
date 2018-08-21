@@ -1,18 +1,5 @@
 FROM resin/%%RESIN_MACHINE_NAME%%-node:8
 
-# Move to app dir
-WORKDIR /usr/src/app
-
-# Move package.json to filesystem
-COPY ./package.json ./
-
-#RUN JOBS=MAX npm install \
-#  && npm cache clean --force \
-#  && node_modules/.bin/ember build --environment=production
-
-# Move app to filesystem
-COPY ./data ./frontend
-
 # Install other apt deps
 RUN apt-get update && apt-get install -y --no-install-recommends \
   apt-utils \
@@ -40,6 +27,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   fbset \
   libexpat-dev && rm -rf /var/lib/apt/lists/*
 
+# Move to app dir
+WORKDIR /usr/src/app
+
+# Move package.json to filesystem
+COPY ./package.json ./
+
+#RUN JOBS=MAX npm install \
+#  && npm cache clean --force \
+#  && node_modules/.bin/ember build --environment=production
+
+# Move app to filesystem
+COPY ./data ./frontend
+
 RUN echo "#!/bin/bash" > /etc/X11/xinit/xserverrc \
   && echo "" >> /etc/X11/xinit/xserverrc \
   && echo 'exec /usr/bin/X -s 0 dpms -nocursor -nolisten tcp "$@"' >> /etc/X11/xinit/xserverrc
@@ -49,7 +49,6 @@ WORKDIR /usr/src/app
 
 # Move package.json to filesystem
 COPY ./package.json .
-
 COPY ./start.sh .
 
 # Install npm modules for the application
