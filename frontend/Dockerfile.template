@@ -28,8 +28,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   python-dev \
   python-pip \
   python-smbus \
-  libexpat-dev && rm -rf /var/lib/apt/lists/*
-
+  dnsmasq \
+  wireless-tools \
+  libexpat-dev \
+  && rm -rf /var/lib/apt/lists/* \
+  && apt-get clean
 
 RUN pip install evdev \
   && pip install RPi.GPIO
@@ -66,6 +69,11 @@ COPY ./start.sh .
 # Install npm modules for the application
 RUN JOBS=MAX npm install --unsafe-perm --production && npm cache clean --force && \
   rm -rf /tmp/* && node_modules/.bin/electron-rebuild
+
+RUN curl https://api.github.com/repos/resin-io/resin-wifi-connect/releases/latest -s \
+    | grep -hoP 'browser_download_url": "\K.*%%RESIN_ARCH%%\.tar\.gz' \
+    | xargs -n1 curl -Ls \
+    | tar -xvz -C /usr/src/app/
 
 # Start app
 

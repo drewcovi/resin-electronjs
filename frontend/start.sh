@@ -2,6 +2,8 @@
 
 export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
+
+
 # Start your application here.
 
 #!/bin/bash
@@ -9,6 +11,15 @@ export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 /usr/bin/hyperpixel-init
 /usr/bin/hyperpixel-touch
 
+
+iwgetid -r
+
+if [ $? -eq 0 ]; then
+    printf 'Skipping WiFi Connect\n'
+else
+    printf 'Starting WiFi Connect\n'
+    ./wifi-connect
+fi
 
 # By default docker gives us 64MB of shared memory size but to display heavy
 # pages we need more.

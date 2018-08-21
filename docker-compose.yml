@@ -2,17 +2,6 @@ version: '2'
 volumes:
   firmware:
 services:
-
-  wifi:
-    build: ./services
-    privileged: true
-    labels:
-      io.resin.features.kernel-modules: '1'
-      io.resin.features.firmware: '1'
-      io.resin.features.dbus: '1'
-      io.resin.features.supervisor-api: '1'
-      io.resin.features.resin-api: '1'
-
   frontend:
     build: ./frontend
     privileged: true
