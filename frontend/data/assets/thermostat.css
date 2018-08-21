@@ -1,0 +1,8 @@
+@import "ember-bootstrap/bootstrap";
+
+.display-1{
+  font-size: 40vw;
+}
+.display-4{
+  font-size: 5vw
+}
