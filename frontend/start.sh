@@ -13,10 +13,10 @@ dpkg-reconfigure tzdata
 
 # Replace this below with your own application start
 # It just idles in this example.
-while : ; do
-    date
-    sleep 60
-done
+# while : ; do
+#     date
+#     sleep 60
+# done
 
 # Start your application here.
 
@@ -26,8 +26,8 @@ done
 /usr/bin/hyperpixel-touch
 
 
-#iwgetid -r
-
+iwgetid -r
+printf $
 #if [ $? -eq 0 ]; then
 #    printf 'Skipping WiFi Connect\n'
 #else
