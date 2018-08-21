@@ -6,6 +6,8 @@ services:
   platform:
     build: ./platform
     privileged: true
+    labels:
+      io.resin.features.kernel-modules: '1'
     depends_on:
       - services
 
