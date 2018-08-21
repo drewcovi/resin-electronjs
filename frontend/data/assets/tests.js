@@ -10,9 +10,14 @@ define('thermostat/tests/app.lint-test', [], function () {
     assert.ok(true, 'app.js should pass ESLint\n\n');
   });
 
+  QUnit.test('components/decrementer-button.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/decrementer-button.js should pass ESLint\n\n');
+  });
+
   QUnit.test('components/incrementer-button.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'components/incrementer-button.js should pass ESLint\n\n18:5 - Unexpected console statement. (no-console)');
+    assert.ok(true, 'components/incrementer-button.js should pass ESLint\n\n');
   });
 
   QUnit.test('components/realtime-clock.js', function (assert) {

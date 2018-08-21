@@ -787,6 +787,21 @@ define('thermostat/components/bs-tooltip/element', ['exports', 'ember-bootstrap/
     }
   });
 });
+define('thermostat/components/decrementer-button', ['exports', 'thermostat/components/incrementer-button'], function (exports, _incrementerButton) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = _incrementerButton.default.extend({
+    layoutName: 'components/incrementer-button',
+    classNames: ['inverted'],
+    click() {
+      let targetTemp = this.get('targetTemp');
+      this.set('targetTemp', targetTemp - 1);
+    }
+  });
+});
 define('thermostat/components/ember-popper-targeting-parent', ['exports', 'ember-popper/components/ember-popper-targeting-parent'], function (exports, _emberPopperTargetingParent) {
   'use strict';
 
@@ -821,23 +836,10 @@ define('thermostat/components/incrementer-button', ['exports'], function (export
   });
   exports.default = Ember.Component.extend({
     tagName: 'button',
-    classNames: ['btn', 'btn-link'],
-    inverted: false,
+    classNames: ['btn', 'btn-link', 'temp-control'],
     click() {
-      if (this.get('inverted')) {
-
-        alert('decrement');
-      } else {
-        alert('increment');
-      }
-    },
-    init() {
-      this._super();
-      let classNames = this.get('classNames').toArray();
-      console.log(classNames);
-      // if(this.get('inverted')){
-      //   this.set('classNames', classNames.push('rotate-180'));
-      // }
+      let targetTemp = this.get('targetTemp');
+      this.set('targetTemp', targetTemp + 1);
     }
   });
 });
@@ -1301,7 +1303,7 @@ define("thermostat/templates/components/temperature-control", ["exports"], funct
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "NWdaisjN", "block": "{\"symbols\":[],\"statements\":[[6,\"h1\"],[10,\"class\",\"display-1 text-center\"],[8],[0,\"\\n  \"],[1,[20,\"currentTemp\"],false],[0,\"\\n\"],[9],[0,\"\\n\"],[6,\"div\"],[10,\"class\",\"align-items-center\"],[8],[0,\"\\n\"],[1,[26,\"incrementer-button\",null,[[\"inverted\"],[\"true\"]]],false],[0,\"\\n\"],[1,[20,\"incrementer-button\"],false],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "thermostat/templates/components/temperature-control.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "26YgcSfb", "block": "{\"symbols\":[],\"statements\":[[6,\"h1\"],[10,\"class\",\"display-1 text-center\"],[8],[0,\"\\n  \"],[1,[20,\"currentTemp\"],false],[0,\"\\n\"],[9],[0,\"\\n\"],[6,\"div\"],[10,\"class\",\"d-flex justify-content-center\"],[8],[0,\"\\n\"],[1,[26,\"decrementer-button\",null,[[\"class\",\"targetTemp\"],[\"inverted\",[22,[\"currentTemp\"]]]]],false],[0,\"\\n\"],[1,[26,\"incrementer-button\",null,[[\"targetTemp\"],[[22,[\"currentTemp\"]]]]],false],[0,\"\\n\"],[9]],\"hasEval\":false}", "meta": { "moduleName": "thermostat/templates/components/temperature-control.hbs" } });
 });
 define("thermostat/templates/index", ["exports"], function (exports) {
   "use strict";
@@ -1333,6 +1335,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("thermostat/app")["default"].create({"name":"thermostat","version":"0.0.0+834011fb"});
+  require("thermostat/app")["default"].create({"name":"thermostat","version":"0.0.0+2db76e20"});
 }
 //# sourceMappingURL=thermostat.map
