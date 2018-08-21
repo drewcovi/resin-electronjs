@@ -159,7 +159,8 @@ app.on('ready', () => {
   // }));
   // the big red button, here we go
   // mainWindow.loadURL(electronConfig.URL_LAUNCHER_URL);
+  mainWindow.loadURL('https://www.youtube.com/watch?v=YE7VzlLtp-4');
   // loadURL(mainWindow);
-  mainWindow.loadURL('serve://dist');
+  // mainWindow.loadURL('serve://dist');
   
 });
