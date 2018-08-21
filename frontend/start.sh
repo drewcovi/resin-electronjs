@@ -6,6 +6,10 @@ export DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 
 #!/bin/bash
 
+/usr/bin/hyperpixel-init
+/usr/bin/hyperpixel-touch
+
+
 # By default docker gives us 64MB of shared memory size but to display heavy
 # pages we need more.
 umount /dev/shm && mount -t tmpfs shm /dev/shm
