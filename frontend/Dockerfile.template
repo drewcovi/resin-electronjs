@@ -24,8 +24,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   libnss3-dev \
   libsmbclient \
   libssh-4 \
-  libzbar-dev \
-  libzbar0 \
   fbset \
   python-dev \
   python-pip \
